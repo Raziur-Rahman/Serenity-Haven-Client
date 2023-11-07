@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import { IoLogInOutline, IoLogOutOutline } from "react-icons/io5";
 
 
 const Navber = () => {
+
+    const { user } = useAuth();
 
     const navlinks = <>
         <li><Link to='/'>Home</Link></li>
@@ -9,8 +13,8 @@ const Navber = () => {
     </>
 
     return (
-        <div>
-            <div className="navbar bg-base-100 py-5 shadow-2xl rounded-md">
+        <div className="mt-2">
+            <div className="navbar bg-base-100 py-5 shadow-2xl rounded-md items-center">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -32,17 +36,23 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><Link>Profile</Link></li>
-                            <li><Link>Logout</Link></li>
-                        </ul>
-                    </div>
+                    {
+                        user ? <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <li><Link>Profile</Link></li>
+                                <li><Link>LogOut <span><IoLogOutOutline></IoLogOutOutline></span></Link></li>
+                            </ul>
+                        </div> : <div>
+                            <Link to='/login'>
+                                <button type="button" className="px-5 py-3 flex items-center hover:bg-amber-500 font-semibold border rounded "><span className="text-2xl mr-1"> <IoLogInOutline></IoLogInOutline></span> Log In</button>
+                            </Link>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

@@ -3,6 +3,8 @@ import MainLayout from "../Layouts/MainLayout";
 import HomePage from "../Pages/HomePage";
 import Bookings from "../Pages/Bookings";
 import ErrorPage from "../Pages/ErrorPage";
+import LoginPage from "../Pages/LoginPage";
+import SignUpPage from "../Pages/SignUpPage";
 
 
 const Router = createBrowserRouter([
@@ -16,10 +18,18 @@ const Router = createBrowserRouter([
                 element:<HomePage></HomePage>
             },
             {
+                path:'/login',
+                element: <LoginPage></LoginPage>
+            },
+            {
                 path:'/bookings',
                 element: <Bookings></Bookings>
             }
         ]
+    },
+    {
+        path:"/signUp",
+        element:<SignUpPage></SignUpPage>
     }
 ])
 
