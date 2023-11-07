@@ -5,6 +5,7 @@ import useAuth from "../Hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PageTitle from "../Hooks/PageTitle";
 
 
 const SignUpPage = () => {
@@ -102,6 +103,7 @@ const SignUpPage = () => {
                     </div>
                 </div>
             </div>
+            <PageTitle title={"SignUp"}></PageTitle>
         </div>
     );
 };

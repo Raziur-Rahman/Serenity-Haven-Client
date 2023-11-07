@@ -1,0 +1,244 @@
+[
+  {
+    "room_type": "Standard Single Room",
+    "description": "A comfortable single room with a single bed, suitable for solo travelers.",
+    "amenities": [
+      "Single bed",
+      "Private bathroom",
+      "Air conditioning",
+      "Free Wi-Fi",
+      "TV"
+    ],
+    "packages": [
+      {
+        "name": "3-Day Package",
+        "description": "Stay for 3 days and get a discounted rate.",
+        "price": 200
+      },
+      {
+        "name": "5-Day Package",
+        "description": "Stay for 5 days and get an even lower rate.",
+        "price": 300
+      },
+      {
+        "name": "7-Day Package",
+        "description": "Stay for 7 days and enjoy the lowest rate.",
+        "price": 400
+      }
+    ],
+    "quantity": 10,
+    "images": [
+      "https://example.com/standard_single_room_1.jpg",
+      "https://example.com/standard_single_room_2.jpg"
+    ],
+    "special_offer": "Book 5 nights and get 1 night free!",
+    "special_offer_price": 350,
+    "reviews": [
+      {
+        "user": "John Doe",
+        "rating": 4.5,
+        "comment": "Great room and excellent service!"
+      },
+      {
+        "user": "Jane Smith",
+        "rating": 5,
+        "comment": "Very comfortable stay. Highly recommended!"
+      }
+    ]
+  },
+  {
+    "room_type": "Deluxe Double Room",
+    "description": "A spacious room with a queen-sized bed, ideal for couples.",
+    "amenities": [
+      "Queen-sized bed",
+      "Private bathroom",
+      "Air conditioning",
+      "Free Wi-Fi",
+      "TV",
+      "Mini-fridge"
+    ],
+    "packages": [
+      {
+        "name": "3-Day Package",
+        "description": "Stay for 3 days and get a discounted rate.",
+        "price": 350
+      },
+      {
+        "name": "5-Day Package",
+        "description": "Stay for 5 days and get an even lower rate.",
+        "price": 500
+      },
+      {
+        "name": "7-Day Package",
+        "description": "Stay for 7 days and enjoy the lowest rate.",
+        "price": 650
+      }
+    ],
+    "quantity": 12,
+    "images": [
+      "https://example.com/deluxe_double_room_1.jpg",
+      "https://example.com/deluxe_double_room_2.jpg"
+    ],
+    "special_offer": "10% off for advance bookings!",
+    "special_offer_price": 450,
+    "reviews": [
+      {
+        "user": "Michael Johnson",
+        "rating": 4.8,
+        "comment": "Fantastic room with a beautiful view."
+      },
+      {
+        "user": "Samantha Davis",
+        "rating": 4.7,
+        "comment": "Clean and comfortable. Loved the amenities."
+      }
+    ]
+  },
+  {
+    "room_type": "Family Suite",
+    "description": "A large suite with multiple beds, perfect for families or groups.",
+    "amenities": [
+      "One king-sized bed",
+      "Two twin beds",
+      "Private bathroom",
+      "Air conditioning",
+      "Free Wi-Fi",
+      "TV",
+      "Mini-fridge"
+    ],
+    "packages": [
+      {
+        "name": "3-Day Package",
+        "description": "Stay for 3 days and get a discounted rate.",
+        "price": 550
+      },
+      {
+        "name": "5-Day Package",
+        "description": "Stay for 5 days and get an even lower rate.",
+        "price": 750
+      },
+      {
+        "name": "7-Day Package",
+        "description": "Stay for 7 days and enjoy the lowest rate.",
+        "price": 950
+      }
+    ],
+    "quantity": 8,
+    "images": [
+      "https://example.com/family_suite_1.jpg",
+      "https://example.com/family_suite_2.jpg"
+    ],
+    "special_offer": "Free breakfast included for all days of stay!",
+    "special_offer_price": 600,
+    "reviews": [
+      {
+        "user": "Jennifer Lee",
+        "rating": 4.6,
+        "comment": "Spacious and clean. Great for families."
+      },
+      {
+        "user": "David Brown",
+        "rating": 4.9,
+        "comment": "Excellent suite with comfortable beds."
+      }
+    ]
+  },
+  {
+    "room_type": "Executive Suite",
+    "description": "A luxurious suite with a separate living area and a king-sized bed.",
+    "amenities": [
+      "King-sized bed",
+      "Private bathroom",
+      "Air conditioning",
+      "Free Wi-Fi",
+      "TV",
+      "Mini-fridge",
+      "Separate living area"
+    ],
+    "packages": [
+      {
+        "name": "3-Day Package",
+        "description": "Stay for 3 days and get a discounted rate.",
+        "price": 800
+      },
+      {
+        "name": "5-Day Package",
+        "description": "Stay for 5 days and get an even lower rate.",
+        "price": 1100
+      },
+      {
+        "name": "7-Day Package",
+        "description": "Stay for 7 days and enjoy the lowest rate.",
+        "price": 1400
+      }
+    ],
+    "quantity": 6,
+    "images": [
+      "https://example.com/executive_suite_1.jpg",
+      "https://example.com/executive_suite_2.jpg"
+    ],
+    "special_offer": "Upgrade to a higher floor for free!",
+    "special_offer_price": 900,
+    "reviews": [
+      {
+        "user": "Matthew Taylor",
+        "rating": 4.9,
+        "comment": "Outstanding suite with top-notch service."
+      },
+      {
+        "user": "Laura Rodriguez",
+        "rating": 4.7,
+        "comment": "Loved the spacious living area."
+      }
+    ]
+  },
+  {
+    "room_type": "Honeymoon Suite",
+    "description": "A romantic suite with a canopy bed and a private balcony.",
+    "amenities": [
+      "Canopy bed",
+      "Private bathroom with Jacuzzi",
+      "Air conditioning",
+      "Free Wi-Fi",
+      "TV",
+      "Mini-fridge",
+      "Private balcony with view"
+    ],
+    "packages": [
+      {
+        "name": "3-Day Package",
+        "description": "Stay for 3 days and get a discounted rate.",
+        "price": 950
+      },
+      {
+        "name": "5-Day Package",
+        "description": "Stay for 5 days and get an even lower rate.",
+        "price": 1400
+      },
+      {
+        "name": "7-Day Package",
+        "description": "Stay for 7 days and enjoy the lowest rate.",
+        "price": 1850
+      }
+    ],
+    "quantity": 4,
+    "images": [
+      "https://example.com/honeymoon_suite_1.jpg",
+      "https://example.com/honeymoon_suite_2.jpg"
+    ],
+    "special_offer": "Complimentary champagne and flowers upon arrival!",
+    "special_offer_price": 1200,
+    "reviews": [
+      {
+        "user": "Emily Turner",
+        "rating": 5,
+        "comment": "Absolutely magical. Perfect for a honeymoon."
+      },
+      {
+        "user": "Daniel Smith",
+        "rating": 4.8,
+        "comment": "Incredible suite with breathtaking views."
+      }
+    ]
+  }
+]
