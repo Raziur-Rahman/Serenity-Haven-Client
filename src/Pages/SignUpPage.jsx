@@ -1,11 +1,57 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../assets/login.svg"
-import { FaFacebookF } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import { BiLogoLinkedin } from "react-icons/bi";
+import useAuth from "../Hooks/useAuth";
+import { updateProfile } from "firebase/auth";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignUpPage = () => {
+
+    const { UserRegitration, GoogleLogin } = useAuth();
+    const navigate = useNavigate();
+
+    const handleSignUp = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
+
+        UserRegitration(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                toast("User created Successfuly....")
+
+                updateProfile(user, {
+                    displayName: name,
+                    photoURL: photo
+                })
+                navigate('/')
+            })
+            .catch(error => {
+                console.error(error);
+                toast("Registration failed...")
+            })
+    }
+
+    const handleGoogleLogin =() =>{
+        GoogleLogin()
+        .then(result =>{
+            console.log(result.user);
+            toast("Login SuccessFull!!!")
+            navigate('/')
+        })
+        .catch(error => {
+            console.error(error);
+            toast(`${error}`)
+        })
+    }
+
+
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row">
@@ -13,13 +59,19 @@ const SignUpPage = () => {
                     <img src={img} alt="" className="h-full" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-md border bg-base-200 shadow-transparent">
-                    <h1 className="text-5xl text-center mt-10 font-bold">Sign Up</h1>
-                    <form className="card-body">
+                    <h1 className="text-5xl text-center mt-5 font-bold">Sign Up</h1>
+                    <form onSubmit={handleSignUp} className="card-body py-2">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Profile Photo</span>
+                            </label>
+                            <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -44,9 +96,7 @@ const SignUpPage = () => {
                     <div className="card-body items-center text-center pt-0">
                         <p>Or Sign In with</p>
                         <div className="space-x-5">
-                            <button className="btn btn-circle text-xl text-[#0A66C2]"> <FaFacebookF></FaFacebookF> </button>
-                            <button className="btn btn-circle text-xl text-[#0A66C2]"><BiLogoLinkedin></BiLogoLinkedin></button>
-                            <button className="btn btn-circle text-xl"><FcGoogle></FcGoogle></button>
+                            <button onClick={handleGoogleLogin} className="btn btn-outline text-xl">Log in with <FcGoogle></FcGoogle></button>
                         </div>
                         <p>Already have an account? <Link className="text-[#FF3811]" to='/login'>Login</Link> </p>
                     </div>
