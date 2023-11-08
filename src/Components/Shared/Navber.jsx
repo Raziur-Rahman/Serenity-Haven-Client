@@ -25,11 +25,12 @@ const Navber = () => {
     const navlinks = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/bookings'>My Bookings</Link></li>
+        <li><Link to='/rooms'>Our Rooms</Link></li>
     </>
 
     return (
-        <div className="mt-2">
-            <div className="navbar bg-base-100 py-5 shadow-2xl rounded-md items-center">
+        <div className="mt-2 mb-5">
+            <div className="navbar bg-base-100 py-5 shadow-md items-center">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

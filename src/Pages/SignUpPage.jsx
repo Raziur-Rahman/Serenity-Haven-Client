@@ -5,7 +5,7 @@ import useAuth from "../Hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import PageTitle from "../Hooks/PageTitle";
+import PageTitle from "../Components/Shared/PageTitle";
 
 
 const SignUpPage = () => {

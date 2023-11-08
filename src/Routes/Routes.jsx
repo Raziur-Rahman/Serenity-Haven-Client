@@ -6,6 +6,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import LoginPage from "../Pages/LoginPage";
 import SignUpPage from "../Pages/SignUpPage";
 import PrivateRoute from "./PrivateRoute";
+import RoomsPage from "../Pages/RoomsPage";
 
 
 const Router = createBrowserRouter([
@@ -17,6 +18,10 @@ const Router = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage></HomePage>
+            },
+            {
+                path: "/rooms",
+                element: <RoomsPage></RoomsPage>
             },
             {
                 path: '/bookings',

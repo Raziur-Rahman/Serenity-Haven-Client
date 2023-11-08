@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import useAuth from "../Hooks/useAuth";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import PageTitle from "../Hooks/PageTitle";
+import PageTitle from "../Components/Shared/PageTitle";
 
 
 const LoginPage = () => {

@@ -2,6 +2,7 @@
   {
     "room_type": "Standard Single Room",
     "description": "A comfortable single room with a single bed, suitable for solo travelers.",
+    "room_size": "200 sq. ft.",
     "amenities": [
       "Single bed",
       "Private bathroom",
@@ -28,8 +29,8 @@
     ],
     "quantity": 10,
     "images": [
-      "https://example.com/standard_single_room_1.jpg",
-      "https://example.com/standard_single_room_2.jpg"
+      "https://i.ibb.co/txWRKZ1/Single-Room-1.jpg",
+      "https://i.ibb.co/b1qdmnS/Single-room-2.jpg"
     ],
     "special_offer": "Book 5 nights and get 1 night free!",
     "special_offer_price": 350,
@@ -37,18 +38,21 @@
       {
         "user": "John Doe",
         "rating": 4.5,
-        "comment": "Great room and excellent service!"
+        "comment": "Great room and excellent service!",
+        "timestamp": "2023-11-05T12:30:45Z"
       },
       {
         "user": "Jane Smith",
         "rating": 5,
-        "comment": "Very comfortable stay. Highly recommended!"
+        "comment": "Very comfortable stay. Highly recommended!",
+        "timestamp": "2023-11-06T09:15:20Z"
       }
     ]
   },
   {
     "room_type": "Deluxe Double Room",
     "description": "A spacious room with a queen-sized bed, ideal for couples.",
+    "room_size": "300 sq. ft.",
     "amenities": [
       "Queen-sized bed",
       "Private bathroom",
@@ -76,8 +80,8 @@
     ],
     "quantity": 12,
     "images": [
-      "https://example.com/deluxe_double_room_1.jpg",
-      "https://example.com/deluxe_double_room_2.jpg"
+      "https://i.ibb.co/g9S6zVs/Double-Room-1.jpg",
+      "https://i.ibb.co/HCjf9Jj/Double-Room-2.jpg"
     ],
     "special_offer": "10% off for advance bookings!",
     "special_offer_price": 450,
@@ -85,18 +89,21 @@
       {
         "user": "Michael Johnson",
         "rating": 4.8,
-        "comment": "Fantastic room with a beautiful view."
+        "comment": "Fantastic room with a beautiful view.",
+        "timestamp": "2023-11-07T14:25:10Z"
       },
       {
         "user": "Samantha Davis",
         "rating": 4.7,
-        "comment": "Clean and comfortable. Loved the amenities."
+        "comment": "Clean and comfortable. Loved the amenities.",
+        "timestamp": "2023-11-08T10:50:30Z"
       }
     ]
   },
   {
     "room_type": "Family Suite",
     "description": "A large suite with multiple beds, perfect for families or groups.",
+    "room_size": "450 sq. ft.",
     "amenities": [
       "One king-sized bed",
       "Two twin beds",
@@ -125,8 +132,8 @@
     ],
     "quantity": 8,
     "images": [
-      "https://example.com/family_suite_1.jpg",
-      "https://example.com/family_suite_2.jpg"
+      "https://i.ibb.co/BNdJGs3/Family-Suite-1.jpg",
+      "https://i.ibb.co/qyHt3nc/Family-Suite-2.jpg"
     ],
     "special_offer": "Free breakfast included for all days of stay!",
     "special_offer_price": 600,
@@ -134,18 +141,21 @@
       {
         "user": "Jennifer Lee",
         "rating": 4.6,
-        "comment": "Spacious and clean. Great for families."
+        "comment": "Spacious and clean. Great for families.",
+        "timestamp": "2023-11-09T12:20:15Z"
       },
       {
         "user": "David Brown",
         "rating": 4.9,
-        "comment": "Excellent suite with comfortable beds."
+        "comment": "Excellent suite with comfortable beds.",
+        "timestamp": "2023-11-10T08:40:50Z"
       }
     ]
   },
   {
     "room_type": "Executive Suite",
     "description": "A luxurious suite with a separate living area and a king-sized bed.",
+    "room_size": "600 sq. ft.",
     "amenities": [
       "King-sized bed",
       "Private bathroom",
@@ -174,8 +184,8 @@
     ],
     "quantity": 6,
     "images": [
-      "https://example.com/executive_suite_1.jpg",
-      "https://example.com/executive_suite_2.jpg"
+      "https://i.ibb.co/ydYn9sB/Executive-Suite-1.jpg",
+      "https://i.ibb.co/GkKnpfH/Executive-Suite-2.jpg"
     ],
     "special_offer": "Upgrade to a higher floor for free!",
     "special_offer_price": 900,
@@ -183,18 +193,21 @@
       {
         "user": "Matthew Taylor",
         "rating": 4.9,
-        "comment": "Outstanding suite with top-notch service."
+        "comment": "Outstanding suite with top-notch service.",
+        "timestamp": "2023-11-11T15:15:30Z"
       },
       {
         "user": "Laura Rodriguez",
         "rating": 4.7,
-        "comment": "Loved the spacious living area."
+        "comment": "Loved the spacious living area.",
+        "timestamp": "2023-11-12T11:05:40Z"
       }
     ]
   },
   {
     "room_type": "Honeymoon Suite",
     "description": "A romantic suite with a canopy bed and a private balcony.",
+    "room_size": "700 sq. ft.",
     "amenities": [
       "Canopy bed",
       "Private bathroom with Jacuzzi",
@@ -223,8 +236,8 @@
     ],
     "quantity": 4,
     "images": [
-      "https://example.com/honeymoon_suite_1.jpg",
-      "https://example.com/honeymoon_suite_2.jpg"
+      "https://i.ibb.co/ZSCzDfR/Honey-Moon-Suite-1.jpg",
+      "https://i.ibb.co/qkwCVcP/Honey-Moon-Suite-2.jpg"
     ],
     "special_offer": "Complimentary champagne and flowers upon arrival!",
     "special_offer_price": 1200,
@@ -232,12 +245,14 @@
       {
         "user": "Emily Turner",
         "rating": 5,
-        "comment": "Absolutely magical. Perfect for a honeymoon."
+        "comment": "Absolutely magical. Perfect for a honeymoon.",
+        "timestamp": "2023-11-13T09:45:55Z"
       },
       {
         "user": "Daniel Smith",
         "rating": 4.8,
-        "comment": "Incredible suite with breathtaking views."
+        "comment": "Incredible suite with breathtaking views.",
+        "timestamp": "2023-11-14T13:20:10Z"
       }
     ]
   }

@@ -1,13 +1,16 @@
+import Banner from "../Components/Home/Banner";
 import NewsLetter from "../Components/Home/NewsLetter";
+import SomeOfOurRooms from "../Components/Home/FeaturedRooms";
 import Footer from "../Components/Shared/Footer";
-import PageTitle from "../Hooks/PageTitle";
+import PageTitle from "../Components/Shared/PageTitle";
 
 
 const HomePage = () => {
     return (
         <div className="space-y-5">
             <PageTitle title={"Home"}></PageTitle>
-            <h1 className="text-7xl text-amber-600">HOme content Will be here</h1>
+            <Banner></Banner>
+            <SomeOfOurRooms></SomeOfOurRooms>
             <NewsLetter></NewsLetter>
             <Footer></Footer>
         </div>

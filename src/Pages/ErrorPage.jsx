@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PageTitle from "../Hooks/PageTitle";
+import PageTitle from "../Components/Shared/PageTitle";
 
 const ErrorPage = () => {
     return (

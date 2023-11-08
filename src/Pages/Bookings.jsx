@@ -1,4 +1,4 @@
-import PageTitle from "../Hooks/PageTitle";
+import PageTitle from "../Components/Shared/PageTitle";
 
 
 const Bookings = () => {
