@@ -10,6 +10,7 @@ import RoomsPage from "../Pages/RoomsPage";
 import RoomsDetails from "../Pages/RoomsDetails";
 // import useAxiosSecure from "../Hooks/useAxiosSecure";
 import axios from "axios";
+import GiveReview from "../Components/Rooms/GiveReview";
 
 // const axiosSecure = useAxiosSecure();
 
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
                 path: "/roomdetails/:id",
                 element:<RoomsDetails></RoomsDetails>,
                 loader: ({params})=> axios.get(`http://localhost:5000/rooms/${params.id}`)
+            },
+            {
+                path: "/giveReview/:id",
+                element: <PrivateRoute><GiveReview></GiveReview></PrivateRoute>
             }
         ]
     },
