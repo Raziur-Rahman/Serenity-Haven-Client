@@ -5,6 +5,7 @@ import useAuth from "../Hooks/useAuth";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from "../Components/Shared/PageTitle";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 
 const LoginPage = () => {
@@ -12,6 +13,8 @@ const LoginPage = () => {
     const {GoogleLogin, UserLogIn} = useAuth();
     const loaction = useLocation();
     const navigate = useNavigate();
+    const axiosSecure = useAxiosSecure();
+    console.log(loaction);
 
     const handleLogIn = event => {
         event.preventDefault();
@@ -23,7 +26,15 @@ const LoginPage = () => {
         .then(result =>{
             toast("Login Successful!!")
             console.log(result.user);
-            navigate(loaction?.state ? loaction?.state : '/')
+            const user = { email }
+            // Get Jwt Token
+            axiosSecure.post('/jwt', user )
+            .then( res =>{
+                console.log(res?.data);
+                if(res?.data?.Success){
+                    navigate(loaction?.state ? loaction?.state : '/')
+                }
+            }) 
         })
         .catch(error => {
             toast(`${error.message}`)
@@ -36,7 +47,15 @@ const LoginPage = () => {
         .then(result =>{
             console.log(result.user);
             toast("Login SuccessFull!!!")
-            navigate(loaction?.state ? loaction?.state : '/')
+            const user = { email: result?.user?.email }
+            // Get Jwt Token
+            axiosSecure.post('/jwt', user )
+            .then( res =>{
+                console.log(res?.data);
+                if(res?.data?.Success){
+                    navigate(loaction?.state ? loaction?.state : '/')
+                }
+            }) 
 
         })
         .catch(error => {

@@ -7,7 +7,11 @@ import LoginPage from "../Pages/LoginPage";
 import SignUpPage from "../Pages/SignUpPage";
 import PrivateRoute from "./PrivateRoute";
 import RoomsPage from "../Pages/RoomsPage";
+import RoomsDetails from "../Pages/RoomsDetails";
+// import useAxiosSecure from "../Hooks/useAxiosSecure";
+import axios from "axios";
 
+// const axiosSecure = useAxiosSecure();
 
 const Router = createBrowserRouter([
     {
@@ -26,6 +30,11 @@ const Router = createBrowserRouter([
             {
                 path: '/bookings',
                 element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
+            },
+            {
+                path: "/roomdetails/:id",
+                element:<RoomsDetails></RoomsDetails>,
+                loader: ({params})=> axios.get(`http://localhost:5000/rooms/${params.id}`)
             }
         ]
     },
@@ -35,7 +44,8 @@ const Router = createBrowserRouter([
     },
     {
         path: "/signUp",
-        element: <SignUpPage></SignUpPage>
+        element: <SignUpPage></SignUpPage>,
+        
     }
 ])
 

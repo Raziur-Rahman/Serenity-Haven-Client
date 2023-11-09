@@ -3,18 +3,26 @@ import useAuth from "../../Hooks/useAuth";
 import { IoLogInOutline, IoLogOutOutline } from "react-icons/io5";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 
 const Navber = () => {
 
     const navigate = useNavigate();
     const { user, userLogOut } = useAuth();
+    const axiosSecure = useAxiosSecure();
 
     const handleLogOut = () => {
         userLogOut()
             .then(() => {
                 toast("User Logged Out Successful...")
-                navigate("/");
+                axiosSecure.post('/logout')
+                .then(res => {
+                    console.log(res.data)
+                    if(res?.data?.Success){
+                        navigate("/");
+                    }
+                })
             })
             .catch((error) => {
                 console.error(error)

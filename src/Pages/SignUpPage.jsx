@@ -6,12 +6,14 @@ import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from "../Components/Shared/PageTitle";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 
 const SignUpPage = () => {
 
     const { UserRegitration, GoogleLogin } = useAuth();
     const navigate = useNavigate();
+    const axiosSecure = useAxiosSecure();
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -31,7 +33,15 @@ const SignUpPage = () => {
                     displayName: name,
                     photoURL: photo
                 })
-                navigate('/')
+                const tokenUser = { email }
+                // Get Jwt Token
+                axiosSecure.post('/jwt', tokenUser)
+                    .then(res => {
+                        console.log(res?.data);
+                        if (res?.data?.Success) {
+                            navigate('/')
+                        }
+                    })
             })
             .catch(error => {
                 console.error(error);
@@ -39,17 +49,25 @@ const SignUpPage = () => {
             })
     }
 
-    const handleGoogleLogin =() =>{
+    const handleGoogleLogin = () => {
         GoogleLogin()
-        .then(result =>{
-            console.log(result.user);
-            toast("Login SuccessFull!!!")
-            navigate('/')
-        })
-        .catch(error => {
-            console.error(error);
-            toast(`${error}`)
-        })
+            .then(result => {
+                console.log(result.user);
+                toast("Login SuccessFull!!!")
+                const user = { email: result?.user?.email }
+                // Get Jwt Token
+                axiosSecure.post('/jwt', user)
+                    .then(res => {
+                        console.log(res?.data);
+                        if (res?.data?.Success) {
+                            navigate('/')
+                        }
+                    })
+            })
+            .catch(error => {
+                console.error(error);
+                toast(`${error}`)
+            })
     }
 
 
