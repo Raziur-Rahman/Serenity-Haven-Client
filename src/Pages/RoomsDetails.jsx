@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import ShowReview from "../Components/Rooms/ShowReview";
 import useAuth from "../Hooks/useAuth";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import useAxiosSecure from "../Hooks/useAxiosSecure";
+import PageTitle from "../Components/Shared/PageTitle";
+import moment from "moment";
+import swal from "sweetalert";
 
 const RoomsDetails = () => {
 
@@ -28,7 +31,25 @@ const RoomsDetails = () => {
         const info = { roomName: room_type, email: user?.email, reservetionDate: date, totalRoom, id: _id, totalPrice, images };
         setData(info);
         if (user) {
-            document.getElementById('my_modal_5').showModal();
+            axiosSecure.get(`/bookings?email=${user.email}`)
+            .then(res => {
+                console.log(res.data)
+                const data = res.data;
+                // item.reservetionDate
+               if(data.length > 0){
+                    const match = data.find(item => moment(item.reservetionDate).isSame(date) );
+                    if(match){
+                        swal("Sorry this Date is Booked");
+                        return ;
+                    }
+                    else{
+                        document.getElementById('my_modal_5').showModal();
+                    }
+               }
+               else{
+                    document.getElementById('my_modal_5').showModal();
+               }
+            })
         }
         else {
             toast("Before Booking You Need Log In Our WebSite");
@@ -40,17 +61,18 @@ const RoomsDetails = () => {
 
     const handleConfirm = () => {
         console.log("hit the button")
-        const updatedQuantity = quantity - data.totalRoom;
+        const a = quantity - data.totalRoom;
+        const updateData = {Quantity: a};
 
         axiosSecure.post("/bookings", data)
             .then(res => {
                 console.log(res.data);
                 if (res?.data?.insertedId) {
                     toast("Your Order Confirmed..");
-                    axiosSecure.patch(`/rooms/${_id}`, updatedQuantity)
+                    axiosSecure.patch(`/rooms/${_id}`, updateData)
                         .then(res => {
                             console.log(res.data)
-                            navigate('/bookings');
+                            navigate('/rooms');
                         })
                 }
             });
@@ -59,8 +81,8 @@ const RoomsDetails = () => {
 
     return (
         <div>
+            <PageTitle title="Room Detalis"></PageTitle>
             <div className="min-h-screen flex flex-col justify-center items-center bg-center bg-cover bg-fixed rounded-lg " style={{ backgroundImage: `URL('${images[1]}')` }}>
-                {/* <img src={images[1]} alt="" /> */}
                 <div className=" lg:w-1/3 text-center space-y-5">
                     <h1 className="text-2xl lg:text-4xl text-amber-700 font-bold">{room_type}</h1>
                     <p className="text-xl lg:text-2xl text-blue-700 font-bold">{description}</p>

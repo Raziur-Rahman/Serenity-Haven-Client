@@ -8,11 +8,9 @@ import SignUpPage from "../Pages/SignUpPage";
 import PrivateRoute from "./PrivateRoute";
 import RoomsPage from "../Pages/RoomsPage";
 import RoomsDetails from "../Pages/RoomsDetails";
-// import useAxiosSecure from "../Hooks/useAxiosSecure";
 import axios from "axios";
 import GiveReview from "../Components/Rooms/GiveReview";
 
-// const axiosSecure = useAxiosSecure();
 
 const Router = createBrowserRouter([
     {
@@ -35,11 +33,12 @@ const Router = createBrowserRouter([
             {
                 path: "/roomdetails/:id",
                 element:<RoomsDetails></RoomsDetails>,
-                loader: ({params})=> axios.get(`http://localhost:5000/rooms/${params.id}`)
+                loader: ({params})=> axios.get(`https://serenity-haven-server-17och9bqe-raziurrahmans-projects.vercel.app/rooms/${params.id}`)
             },
             {
                 path: "/giveReview/:id",
-                element: <PrivateRoute><GiveReview></GiveReview></PrivateRoute>
+                element: <PrivateRoute><GiveReview></GiveReview></PrivateRoute>,
+                loader: ({params})=> axios.get(`https://serenity-haven-server-17och9bqe-raziurrahmans-projects.vercel.app/rooms/${params.id}`)
             }
         ]
     },

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import ShowBookingsData from "../Components/Bookings/ShowBookingsData";
+import PageTitle from "../Components/Shared/PageTitle";
 
 
 
@@ -24,6 +25,7 @@ const Bookings = () => {
 
     return (
         <div>
+            <PageTitle title="Bookings"></PageTitle>
             {
                 bookings.length > 0 ? <div>
                     <p className="text-7xl">Total Bookings: {bookings?.length}</p>

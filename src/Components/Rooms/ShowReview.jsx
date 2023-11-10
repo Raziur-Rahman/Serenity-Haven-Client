@@ -1,4 +1,5 @@
 import moment from "moment/moment";
+import PropTypes from 'prop-types';
 
 
 const ShowReview = ({ review }) => {
@@ -33,3 +34,7 @@ const ShowReview = ({ review }) => {
 };
 
 export default ShowReview;
+
+ShowReview.propTypes = {
+    review: PropTypes.object
+}
