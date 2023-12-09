@@ -33,12 +33,12 @@ const Router = createBrowserRouter([
             {
                 path: "/roomdetails/:id",
                 element:<RoomsDetails></RoomsDetails>,
-                loader: ({params})=> axios.get(`https://serenity-haven-server-17och9bqe-raziurrahmans-projects.vercel.app/rooms/${params.id}`)
+                loader: ({params})=> axios.get(`https://serenity-haven-server.vercel.app/rooms/${params.id}`)
             },
             {
                 path: "/giveReview/:id",
                 element: <PrivateRoute><GiveReview></GiveReview></PrivateRoute>,
-                loader: ({params})=> axios.get(`https://serenity-haven-server-17och9bqe-raziurrahmans-projects.vercel.app/rooms/${params.id}`)
+                loader: ({params})=> axios.get(`https://serenity-haven-server.vercel.app/rooms/${params.id}`)
             }
         ]
     },

@@ -6,13 +6,13 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_apiKey,
-    authDomain: import.meta.env.VITE_authDomain,
-    projectId: import.meta.env.VITE_projectId,
-    storageBucket: import.meta.env.VITE_storageBucket,
-    messagingSenderId: import.meta.env.VITE_messagingSenderId,
-    appId: import.meta.env.VITE_appId
-  };
+  apiKey: "AIzaSyAL8lQyKbmo3L-PX_FNqTgwKXvbiA03zao",
+  authDomain: "b8a11-serenity-haven.firebaseapp.com",
+  projectId: "b8a11-serenity-haven",
+  storageBucket: "b8a11-serenity-haven.appspot.com",
+  messagingSenderId: "968721740579",
+  appId: "1:968721740579:web:fc908a19990d7059961296"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

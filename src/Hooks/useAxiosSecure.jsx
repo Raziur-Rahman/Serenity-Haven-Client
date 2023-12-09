@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-// https://serenity-haven-server-17och9bqe-raziurrahmans-projects.vercel.app
+// https://serenity-haven-server.vercel.app
 // "http://localhost:5000" 
 const axiosSecure = axios.create({
-    baseURL: "https://serenity-haven-server-17och9bqe-raziurrahmans-projects.vercel.app",
+    baseURL: "https://serenity-haven-server.vercel.app",
     withCredentials: true
 })
 
