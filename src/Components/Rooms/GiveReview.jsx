@@ -31,10 +31,10 @@ const GiveReview = () => {
 
     const handleReview = () => {
         const text = document.getElementById('text').value;
-        const time = moment();
-        const timestamp = moment(time).toString();
+        const time = moment().toISOString();
+        // const timestamp = moment(time).toString();
 
-        const rewiew = { user: user?.displayName, rating: rate, comment: text, timestamp }
+        const rewiew = { user: user?.displayName, rating: rate, comment: text, timestamp: time }
         
         // console.log(newReviews)
         if (bookings) {
